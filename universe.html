@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>银河系</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .sun {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -100px;
+            margin-top: -100px;
+            background: radial-gradient(rgb(57, 57, 156) 50%, rgb(191, 210, 223) 50%);
+            border-radius: 50%;
+        }
+
+        .sun::after {
+            content: "Web全栈";
+            position: absolute;
+            color: blanchedalmond;
+            top: 50%;
+            left: 50%;
+            margin-top: -10px;
+            margin-left: -35px;
+        }
+
+        .earth {
+            width: 350px;
+            height: 350px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 5px dashed rgb(31, 55, 107);
+            border-radius: 50%;
+            animation: round 10s linear infinite;
+        }
+
+        .earth::before {
+            content: "";
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(rgb(1, 49, 77) 50%, rgb(191, 210, 223) 50%);
+            border-radius: 50%;
+        }
+
+        .earth::after {
+            content: "CSS3";
+            position: absolute;
+            color: white;
+            top: 50%;
+            left: 5%;
+            margin-top: -10px;
+            margin-left: -35px;
+            animation: bottonone 10s linear infinite;
+        }
+
+        .moon {
+            width: 350px;
+            height: 350px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            animation: round 10s linear infinite;
+        }
+
+        .moon::before {
+            content: "";
+            width: 110px;
+            height: 110px;
+            position: absolute;
+            top: 31%;
+            right: -95px;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(rgba(76, 183, 245, 0.3) 50%, rgba(3, 154, 255, 0.3) 50%);
+            border-radius: 50%;
+        }
+
+        .moon::after {
+            content: "node.js";
+            position: absolute;
+            color: black;
+            top: 30%;
+            right: -3%;
+            margin-top: -10px;
+            margin-left: -35px;
+            animation: bottonone 10s linear infinite;
+        }
+
+        .smars {
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            border: #fff dashed 1px;
+            animation: round 10s linear infinite;
+        }
+
+        .smars::before {
+            content: "";
+            width: 135px;
+            height: 135px;
+            position: absolute;
+            bottom: 63%;
+            right: 68px;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(rgb(1, 28, 44) 50%, rgb(194, 194, 247) 50%);
+            border-radius: 50%;
+        }
+
+        .smars::after {
+            content: "HTML5";
+            position: absolute;
+            color: white;
+            top: 3%;
+            left: 51%;
+            margin-top: -10px;
+            margin-left: -35px;
+            animation: bottonone 10s linear infinite;
+        }
+
+        .svenus {
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            animation: round 10s linear infinite;
+        }
+
+        .svenus::before {
+            content: "";
+            width: 130px;
+            height: 130px;
+            position: absolute;
+            bottom: -29%;
+            right: 19px;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(rgba(2, 1, 48, 0.3) 50%, rgba(0, 81, 134, 0.3) 50%);
+            border-radius: 50%;
+        }
+
+        .svenus::after {
+            content: "jQuery";
+            position: absolute;
+            color: black;
+            top: 96%;
+            left: 65%;
+            margin-top: -10px;
+            margin-left: -35px;
+            animation: bottonone 10s linear infinite;
+        }
+
+        .mars {
+            width: 550px;
+            height: 550px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            animation: round 10s linear infinite;
+        }
+
+        .mars::before {
+            content: "";
+            width: 140px;
+            height: 140px;
+            position: absolute;
+            left: 2px;
+            top: 66%;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(rgba(20, 223, 30, 0.3) 50%, rgb(143, 190, 163) 50%);
+            border-radius: 50%;
+        }
+
+        .mars::after {
+            content: "WebApp";
+            position: absolute;
+            color: black;
+            top: 66%;
+            left: 1%;
+            margin-top: -10px;
+            margin-left: -35px;
+            animation: bottonone 10s linear infinite;
+        }
+
+        .venus {
+            width: 550px;
+            height: 550px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            border: 5px dashed rgba(4, 7, 136, 0.3);
+            animation: round 10s linear infinite;
+        }
+
+        .venus::before {
+            content: "";
+            width: 120px;
+            height: 120px;
+            position: absolute;
+            top: 25%;
+            left: 35px;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: radial-gradient(rgb(227, 238, 76) 50%, rgb(227, 243, 147) 50%);
+        }
+
+        .venus::after {
+            content: "Canvas";
+            position: absolute;
+            color: black;
+            top: 25%;
+            left: 42px;
+            margin-top: -10px;
+            margin-left: -35px;
+            animation: bottonone 10s linear infinite;
+        }
+
+        .pink {
+            width: 550px;
+            height: 550px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            animation: round 10s linear infinite;
+        }
+
+        .pink::before {
+            content: "";
+            width: 135px;
+            height: 135px;
+            position: absolute;
+            top: 2%;
+            right: 7px;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: radial-gradient(rgb(194, 116, 104) 50%, rgb(235, 221, 199) 50%);
+        }
+
+        .pink::after {
+            content: "React.js";
+            position: absolute;
+            color: white;
+            top: 2%;
+            right: 113px;
+            margin-top: -10px;
+            margin-left: -35px;
+            animation: bottonone 10s linear infinite;
+        }
+
+        .redpink {
+            width: 550px;
+            height: 550px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            animation: round 10s linear infinite;
+        }
+
+        .redpink::before {
+            content: "";
+            width: 130px;
+            height: 130px;
+            position: absolute;
+            top: 98%;
+            left: 192px;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: radial-gradient(rgb(238, 107, 137) 50%, rgb(238, 164, 228) 50%);
+        }
+
+        .redpink::after {
+            content: "Zepto.js";
+            position: absolute;
+            color: white;
+            bottom: 0%;
+            left: 195px;
+            margin-top: -10px;
+            margin-left: -35px;
+            animation: bottonone 10s linear infinite;
+        }
+
+        .purple {
+            width: 550px;
+            height: 550px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            animation: round 10s linear infinite;
+        }
+
+        .purple::before {
+            content: "";
+            width: 140px;
+            height: 140px;
+            position: absolute;
+            right: -108px;
+            top: 72%;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(rgb(68, 9, 38) 50%, rgba(174, 23, 212, 0.3) 50%);
+            border-radius: 50%;
+        }
+
+        .purple::after {
+            content: "CSS3";
+            position: absolute;
+            color: white;
+            bottom: 26%;
+            right: 13px;
+            margin-top: -10px;
+            margin-left: -35px;
+            animation: bottonone 10s linear infinite;
+        }
+
+
+        /* @keyframes round {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+        @keyframes bottonone {
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(-360deg);
+            }
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="sun"></div>
+    <div class="earth"> </div>
+    <div class="moon"></div>
+    <div class="smars"></div>
+    <div class="svenus"></div>
+    <div class="mars"></div>
+    <div class="venus"></div>
+    <div class="pink"></div>
+    <div class="redpink"></div>
+    <div class="purple"></div>
+
+
+
+</body>
+
+</html>
